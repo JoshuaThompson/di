@@ -7,9 +7,11 @@ defmodule Exdi.Response do
       {:ok, %HTTPoison.Response{status_code: 204}} ->
         {:ok}
       {:ok, %HTTPoison.Response{status_code: 404}} ->
-        {:error, "404"}
+        {:error, 404}
       {:ok, %HTTPoison.Response{status_code: 429}} ->
-        {:error, "429"}
+        {:error, 429}
+      {:error, %HTTPoison.Error{reason: reason}} ->
+        {:error, reason}
     end
   end
 end
