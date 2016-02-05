@@ -1,7 +1,7 @@
 defmodule Exdi do
   use HTTPoison.Base
 
-  def process_url(endpoint) do
+  defp process_url(endpoint) do
     "http://api.audioaddict.com/v1/di" <> endpoint
   end
 

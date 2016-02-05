@@ -1,6 +1,6 @@
-defmodule Exdi.Channels do
+defmodule Exdi.Channel do
 
-  def get_channels!() do
+  def get_channels! do
     Exdi.get!("/channels")
     |> Map.fetch!(:body)
   end

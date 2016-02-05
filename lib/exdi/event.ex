@@ -1,6 +1,6 @@
-defmodule Exdi.Events do
+defmodule Exdi.Event do
 
-  def get_upcoming_events!() do
+  def get_upcoming_events! do
     Exdi.get!("/events")
     |> Map.fetch!(:body)
   end

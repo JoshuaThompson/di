@@ -1,6 +1,6 @@
-defmodule Exdi.Tracks do
+defmodule Exdi.Track do
 
-  def get_currently_playing!() do
+  def get_currently_playing! do
     Exdi.get!("/track_history")
     |> Map.fetch!(:body)
   end
