@@ -1,19 +1,12 @@
 defmodule Exdi.Channels do
-  use HTTPoison.Base
 
-  alias Exdi.Response
-
-  defp process_url(endpoint) do
-    "http://listen.di.fm" <> endpoint
+  def get_channels!() do
+    Exdi.get!("/channels")
+    |> Map.fetch!(:body)
   end
 
-  defp process_response_body(body) do
-    body
-    |> Poison.decode!()
-  end
-
-  def get_channels(streamlist) when is_bitstring(streamlist) do
-    get("/#{streamlist}")
-    |> Response.handle_response()
+  def get_channel!(channel_id) when is_integer(channel_id) do
+    Exdi.get!("/channels/#{channel_id}")
+    |> Map.fetch!(:body)
   end
 end
