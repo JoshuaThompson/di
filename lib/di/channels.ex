@@ -1,4 +1,4 @@
-defmodule Di.Channel do
+defmodule Di.Channels do
   import Di
 
   def get_channels! do

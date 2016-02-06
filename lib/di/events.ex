@@ -1,4 +1,4 @@
-defmodule Di.Event do
+defmodule Di.Events do
   import Di
 
   def get_upcoming_events! do
