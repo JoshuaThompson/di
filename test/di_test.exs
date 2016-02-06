@@ -1,6 +1,6 @@
-defmodule ExdiTest do
+defmodule DiTest do
   use ExUnit.Case
-  doctest Exdi
+  doctest Di
 
   test "the truth" do
     assert 1 + 1 == 2

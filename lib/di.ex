@@ -1,4 +1,4 @@
-defmodule Exdi do
+defmodule Di do
   use HTTPoison.Base
 
   defp process_url(endpoint) do
