@@ -9,24 +9,25 @@ defmodule Di.Tracks do
     |> Map.fetch!(:body)
     |> decode_json!
     |> Enum.map(fn{_, v} -> {v} end)
-    |> Enum.map(fn{track} ->
-      track
-      |> Map.keys
-      |> Enum.reduce(%Track{}, fn(key, acc) ->
-        val = Map.get(track, key)
-        case key do
-          "images" ->
-            put_in(acc.images, struct(%Image{}, convert_to_atom_map(val)))
-          _ ->
-            Map.put(acc, String.to_atom(key), val)
-        end
-      end)
-    end)
+    |> Enum.map(fn{track} -> create_track(track) end)
   end
 
   def one(channel_id) when is_integer(channel_id) do
     get!("/track_history/channel/#{channel_id}")
     |> Map.fetch!(:body)
     |> decode_json!([%Track{images: %Image{}}])
+  end
+
+  defp create_track(track_map) do
+    Map.keys(track_map)
+    |> Enum.reduce(%Track{}, fn(key, acc) ->
+      val = Map.get(track_map, key)
+      case key do
+        "images" ->
+          put_in(acc.images, struct(%Image{}, convert_to_atom_map(val)))
+        _ ->
+          Map.put(acc, String.to_atom(key), val)
+      end
+    end)
   end
 end
