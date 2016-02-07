@@ -3,6 +3,11 @@ defmodule DiTest do
   doctest Di
 
   test "the truth" do
-    assert 1 + 1 == 2
+    assert test_channel(182) == 182
+  end
+
+  defp test_channel(id) do
+    Di.Channels.get_channel!(id)
+    |> Map.fetch!("id")
   end
 end

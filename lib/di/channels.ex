@@ -1,21 +1,19 @@
 defmodule Di.Channels do
   import Di
 
-  def get_channels! do
+  alias Di.Channel
+  alias Di.SimilarChannel
+  alias Di.Image
+
+  def all do
     get!("/channels")
     |> Map.fetch!(:body)
+    |> decode_json!([%Channel{similar_channels: [%SimilarChannel{}], images: %Image{}}])
   end
 
-  def get_channels do
-    get("/channels")
-  end
-
-  def get_channel!(channel_id) when is_integer(channel_id) do
+  def one(channel_id) when is_integer(channel_id) do
     get!("/channels/#{channel_id}")
     |> Map.fetch!(:body)
-  end
-
-  def get_channel(channel_id) when is_integer(channel_id) do
-    get("/channels/#{channel_id}")
+    |> decode_json!(%Channel{similar_channels: [%SimilarChannel{}], images: %Image{}})
   end
 end
