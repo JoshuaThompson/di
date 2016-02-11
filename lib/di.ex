@@ -51,6 +51,8 @@ defmodule Di do
         {:error, %Error{code: 404, reason: "404 Not Found"}}
       {:ok, %HTTPoison.Response{status_code: 429}} ->
         {:error, %Error{code: 429, reason: "429 Too Many Requests"}}
+      {:ok, %HTTPoison.Response{status_code: code}} ->
+        {:error, %Error{code: code, reason: "Status code: #{code}"}}
       {:error, %HTTPoison.Error{reason: reason}} ->
         {:error, %Error{code: nil, reason: reason}}
     end
