@@ -1,5 +1,5 @@
 defmodule Di.Channel do
-  alias Di.{Request, SimilarChannel, Image}
+  alias Di.{SimilarChannel, Image}
 
   defstruct ad_channel: nil,
             channel_director: nil,
@@ -21,16 +21,4 @@ defmodule Di.Channel do
             description: nil,
             similar_channels: [%SimilarChannel{}],
             images: %Image{}
-
-  def all do
-    Request.get!("/channels")
-    |> Map.fetch!(:body)
-    |> Poison.decode!(as: [%__MODULE__{}])
-  end
-
-  def by_id(channel_id) when is_integer(channel_id) do
-    Request.get!("/channels/#{channel_id}")
-    |> Map.fetch!(:body)
-    |> Poison.decode!(as: %__MODULE__{})
-  end
 end
