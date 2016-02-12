@@ -28,7 +28,7 @@ defmodule Di do
   end
 
   def track_history_by_channel_id(channel_id) when is_integer(channel_id) do
-    get("/track_history")
+    get("/track_history/channel/#{channel_id}")
     |> handle_response([%Track{}])
   end
 
