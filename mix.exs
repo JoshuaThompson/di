@@ -18,4 +18,19 @@ defmodule Di.Mixfile do
     [{:httpoison, "~> 0.8.0"},
      {:poison, "~> 2.0"}]
   end
+
+  defp description do
+   """
+   Elixir wrapper for DI.FM
+   """
+  end
+
+  defp package do
+    [
+      files: ["lib", "priv", "mix.exs", "README*", "readme", "LICENSE*", "license*"],
+      maintainers: ["Joshua Thompson"],
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/JoshuaThompson/di"}
+    ]
+  end
 end
