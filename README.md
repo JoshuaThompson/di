@@ -19,15 +19,16 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
         end
 
 
-###Currently supported routes
-1. /track_history - currently playing and recently played tracks
+##Currently supported routes
+1. /track_history
 2. /channels
-3. /events - upcoming events
+3. /events
 
 This is very much an incomplete wrapper as there are many extra routes and I'm only
-adding them as needed.
+adding them as needed.  Particularly I have yet to have need for routes that require
+user auth.
 
-###Usage
+##Usage
 
 ```iex
 iex>Di.Tracks.now()
