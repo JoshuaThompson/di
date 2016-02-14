@@ -2,11 +2,6 @@ defmodule Di.Tracks do
   import Di.API
   alias Di.Model.Track
 
-  def history(channel_id) when is_integer(channel_id) do
-    get("/track_history/channel/#{channel_id}")
-    |> handle_response([%Track{}])
-  end
-
   def now do
     get("/track_history")
     |> handle_response
@@ -19,7 +14,7 @@ defmodule Di.Tracks do
         result = body
                  |> Enum.map(fn({_, v}) -> {v} end)
                  |> Enum.map(fn{track} -> Poison.Decode.decode(track, as: %Track{}) end)
-        {:ok, result}
+       {:ok, result}
       _ ->
         response
     end

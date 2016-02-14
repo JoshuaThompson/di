@@ -39,12 +39,12 @@ defmodule DiTest do
   end
 
   test "track history for channel" do
-    {:ok, result} = Di.Tracks.history(1)
+    {:ok, result} = Di.Channels.track_history_by_id(1)
     assert List.first(result).channel_id == 1
   end
 
   test "get track history for non-existent channel" do
-    {:ok, result} = Di.Tracks.history(-1)
+    {:ok, result} = Di.Channels.track_history_by_id(-1)
     assert result == []
   end
 end
