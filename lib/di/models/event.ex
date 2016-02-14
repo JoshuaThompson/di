@@ -1,5 +1,5 @@
-defmodule Di.Event do
-  alias Di.Show
+defmodule Di.Model.Event do
+  alias Di.Model.Show
 
   defstruct duration: nil,
             id: nil,

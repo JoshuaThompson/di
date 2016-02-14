@@ -1,4 +1,4 @@
-defmodule Di.Image do
+defmodule Di.Model.Image do
   defstruct di_channel_hero_bg: nil,
             horizontal_banner: nil,
             default: nil,

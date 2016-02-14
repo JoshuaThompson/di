@@ -1,5 +1,5 @@
-defmodule Di.Track do
-  alias Di.Image
+defmodule Di.Model.Track do
+  alias Di.Model.Image
 
   defstruct art_url: nil,
             artist: nil,

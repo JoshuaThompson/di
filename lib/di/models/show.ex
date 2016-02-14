@@ -1,5 +1,5 @@
-defmodule Di.Show do
-  alias Di.{Channel, Image}
+defmodule Di.Model.Show do
+  alias Di.Model.{Channel, Image}
 
   defstruct id: nil,
             name: nil,

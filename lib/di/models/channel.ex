@@ -1,5 +1,5 @@
-defmodule Di.Channel do
-  alias Di.{SimilarChannel, Image}
+defmodule Di.Model.Channel do
+  alias Di.Model.{SimilarChannel, Image}
 
   defstruct ad_channel: nil,
             channel_director: nil,
