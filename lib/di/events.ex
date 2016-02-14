@@ -1,14 +1,17 @@
 defmodule Di.Events do
-  import Di.API
-  alias Di.Model.Event
+  alias Di.{API, Model.Event}
 
+  @doc """
+  Get a list of upcoming events by channel id
+  """
   def by_id(channel_id) when is_integer(channel_id) do
-    get("/events/channel/#{channel_id}")
-    |> handle_response([%Event{}])
+    API.request("/events/channel/#{channel_id}", [%Event{}])
   end
 
+  @doc """
+  Get a list of upcoming events
+  """
   def all do
-    get("/events")
-    |> handle_response([%Event{}])
+    API.request("/events", [%Event{}])
   end
 end
