@@ -12,13 +12,6 @@
           ]
         end
 
-  2. Ensure di is started before your application:
-
-        def application do
-          [applications: [:di]]
-        end
-
-
 ##Currently supported routes
 1. /track_history
 2. /channels
