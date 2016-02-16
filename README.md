@@ -4,13 +4,20 @@
 
 ## Installation
 
-  1. Add di to your list of dependencies in `mix.exs`:
+1. Add di to your list of dependencies in `mix.exs`:
 
         def deps do
-          [
-            {:di, "~> 0.1.0"},
-          ]
+            [
+                {:di, "~> 0.1.0"},
+            ]
         end
+        
+2. Ensure di is started before your application:
+ 
+        def application do
+            [applications: [:di]]
+        end
+ 
 
 ##Currently supported routes
 1. /track_history
