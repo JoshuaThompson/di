@@ -4,7 +4,7 @@
 
 ## Installation
 
-1. Add di to your list of dependencies in `mix.exs`:
+Add di to your list of dependencies in `mix.exs`:
 
         def deps do
             [
@@ -12,7 +12,7 @@
             ]
         end
         
-2. Ensure di is started before your application:
+Ensure di is started before your application:
  
         def application do
             [applications: [:di]]
@@ -20,9 +20,9 @@
  
 
 ##Currently supported routes
-1. /track_history
-2. /channels
-3. /events
+/track_history
+/channels
+/events
 
 This is very much an incomplete wrapper as there are many extra routes and I'm only
 adding them as needed.  Particularly I have yet to have need for routes that require
