@@ -34,17 +34,22 @@ defmodule DiTest do
   end
 
   test "get now playing" do
-    {:ok, result} = Di.Tracks.now()
+    {:ok, result} = Di.TrackHistories.now()
     assert Enum.count(result) > 0 
   end
 
   test "track history for channel" do
-    {:ok, result} = Di.Tracks.history_by_channel_id(1)
+    {:ok, result} = Di.TrackHistories.by_channel_id(1)
     assert List.first(result).channel_id == 1
   end
 
   test "get track history for non-existent channel" do
-    {:ok, result} = Di.Tracks.history_by_channel_id(-1)
+    {:ok, result} = Di.TrackHistories.by_channel_id(-1)
     assert result == []
+  end
+
+  test "get track by id" do
+    {:ok, result} = Di.Tracks.by_id(396404)
+    assert result.title == "Dat Jazz [SIDE A]"
   end
 end

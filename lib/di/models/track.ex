@@ -1,17 +1,24 @@
 defmodule Di.Model.Track do
-  alias Di.Model.Image
+  alias Di.Model.{Artist, Image, VoteInfo}
 
-  defstruct art_url: nil,
-            artist: nil,
-            channel_id: nil,
-            duration: nil,
+  defstruct artist: %Artist{},
+            artists: [%Artist{}],
+            asset_url: nil,
+            content: nil,
+            content_accessibility: nil,
+            details_url: nil,
+            display_artist: nil,
+            id: nil,
             images: %Image{},
+            isrc: nil,
             length: nil,
-            network_id: nil,
+            mix: nil,
+            parental_advisory: nil,
             release: nil,
-            started: nil,
+            retail: nil,
+            retail_accessibility: nil,
             title: nil,
             track: nil,
-            track_id: nil,
-            type: nil
+            version: nil,
+            votes: %VoteInfo{}
 end
