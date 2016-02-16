@@ -20,9 +20,9 @@ Ensure di is started before your application:
  
 
 ##Currently supported routes
-/track_history
-/channels
-/events
+1. /track_history
+2. /channels
+3. /events
 
 This is very much an incomplete wrapper as there are many extra routes and I'm only
 adding them as needed.  Particularly I have yet to have need for routes that require
