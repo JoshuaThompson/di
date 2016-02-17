@@ -32,8 +32,8 @@ user auth.
 ##Usage
 
 ```iex
-iex>Di.TracksHistories.now()
-iex>{:ok, [%TrackHistory{}]} //list of TrackHistory structs
+iex>Di.Tracks.now()
+iex>{:ok, [%Track{}]} //list of Track structs
 ```
 
 Response will come in the form of a {:ok, body} or {:error, reason} tuple.
