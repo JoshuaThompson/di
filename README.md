@@ -1,7 +1,5 @@
 # Di - Elixir Wrapper for DI.FM
 
-[![Build Status](https://travis-ci.org/JoshuaThompson/di.svg?branch=master)](https://travis-ci.org/JoshuaThompson/di)
-
 ## Installation
 
 Add di to your list of dependencies in `mix.exs`:
